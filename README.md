@@ -1,4 +1,4 @@
-# homeward_interview_sample_code
+# app_sample_code
 
 homeward.co interview smaple code
 
