@@ -13,6 +13,7 @@ class BlogApi {
   }
 
   BlogApi._internal();
+  // * Function to Get Blog List From API
   Future<Response?> getBlogListFromApi(String token) async {
     try {
       Uri uri = Uri.parse("${api.url()}blogs");
@@ -28,6 +29,7 @@ class BlogApi {
     return Future.value();
   }
 
+  // * Function to Get Blog Item Details By ID From API
   Future<Response?> getBlogEntryById(String token, int id) async {
     try {
       Uri uri = Uri.parse("${api.url()}blogs/${id.toString()}");

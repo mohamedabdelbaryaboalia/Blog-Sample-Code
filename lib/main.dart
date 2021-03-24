@@ -50,6 +50,7 @@ class WelcomePageState extends State<WelcomePage> {
         });
   }
 
+  // * Function To Check If User is Logged In so Go Direct to Blog List Page
   Future<bool> isUserLoggedIn(BuildContext context) async {
     final bool isLoggedIn =
         await Provider.of<LoginProvider>(context, listen: false)

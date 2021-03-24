@@ -13,6 +13,7 @@ class BlogProvider extends ChangeNotifier {
   final BlogApi _blogApi = serviceLocator<BlogApi>();
   final formatter = dateTimeFormatter.DateFormat("yyyy-MM-dd hh:mm");
 
+  // * Function to Get Blog List
   Future<List<Blog>> getBlogList() async {
     final String? token = await _prefs.read("token");
     final List<Blog> blogList = [];
@@ -29,6 +30,7 @@ class BlogProvider extends ChangeNotifier {
     return Future.value(blogList);
   }
 
+  // * Function to Get Blog Item Details
   Future<Blog?> getBlogItemDetails(int id) async {
     final String? token = await _prefs.read("token");
     if (token != null && token.isNotEmpty) {

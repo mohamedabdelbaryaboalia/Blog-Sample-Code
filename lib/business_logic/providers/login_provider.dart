@@ -14,16 +14,19 @@ class LoginProvider extends ChangeNotifier {
   String? emailErrorMsg;
   String? passwordErrorMsg;
 
+  // * Function to Set Email Error Message
   void setEmailErrorMsg(String msg) {
     emailErrorMsg = msg;
     notifyListeners();
   }
 
+  // * Function to Set Password Error Message
   void setPasswordErrorMsg(String msg) {
     passwordErrorMsg = msg;
     notifyListeners();
   }
 
+  // * Function to Reset Error Messages
   void resetErrorMessages() {
     emailErrorMsg = null;
     passwordErrorMsg = null;
@@ -36,6 +39,7 @@ class LoginProvider extends ChangeNotifier {
     super.dispose();
   }
 
+  // * Function To Login to Api
   Future<bool?> loginToApi() async {
     final Response? response = await _loginApi.loginToApi(
         emailController.text.trim(), passwordController.text.trim());
@@ -51,10 +55,12 @@ class LoginProvider extends ChangeNotifier {
     return Future.value();
   }
 
+  // * Function To Sign Out
   Future<void> signOut() async {
     await _prefs.deleteAll();
   }
 
+  // * Function To Check If User is Logged In so Go Direct to Blog List Page
   Future<bool> isUserLoggedIn() async {
     final String? token = await _prefs.read("token");
     return Future.value(token != null && token.trim().isNotEmpty);
