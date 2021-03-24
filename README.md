@@ -1,6 +1,6 @@
 # app_sample_code
 
-homeward.co interview smaple code
+interview smaple code
 
 ## Getting Started
 
