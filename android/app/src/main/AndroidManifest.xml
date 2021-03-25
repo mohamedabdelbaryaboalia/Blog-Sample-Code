@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.mohamedabdelbary.homeward_interview_sample_code">
    <application
-        android:label="homeward_interview_sample_code"
+        android:label="Sample Code"
+       android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
